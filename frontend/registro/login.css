@@ -1,0 +1,150 @@
+
+:root {
+    --fondo: #ffffff;
+    --container: #ffffff;
+    --borde: #3754b3;
+  }
+  
+*{
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: var(--fondo);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo_flex {
+    height: 320px;
+    width: 800px;
+    background-image: url('../pictures/logo.png');
+    background-size: contain;
+    background-repeat: no-repeat ;
+  }
+  
+
+.main_flex{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    border: solid 6px var(--borde);
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: var(--fondo);
+    width: 70%;
+}
+
+.username_flex{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.password_flex{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tittle_flex{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.button_flex{
+    height: 200px;
+    width: 100%;
+    background-color: var(--borde);
+}
+
+.tittle{
+    color: black;
+    font-size: 60px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    
+}
+
+.username_item{
+    color: rgb(116, 104, 104);
+    font-size: 50px;
+}
+
+.username_input{
+    text-align: center;
+    font-size: 40px;
+    box-sizing: border-box; 
+    width: 80%; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px; 
+    outline: none;
+    border-bottom: 8px solid var(--borde);
+}
+
+.password_item{
+    color: rgb(116, 104, 104);
+    font-size: 50px;
+}
+
+.password_input{
+    text-align: center;
+    font-size: 40px;
+    box-sizing: border-box; 
+    width: 80%; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px; 
+    outline: none;
+    border-bottom: 8px solid var(--borde);
+}
+
+.button{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.button_input {
+    font-size: 40px;
+    height: 50%;
+    width: 60%;
+    background-color: #d6d2d2; 
+    color: #000000; 
+    border: 5px solid #000; 
+    border-radius: 10px;
+    padding: 10px 20px; 
+  }
+  
+.create{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}

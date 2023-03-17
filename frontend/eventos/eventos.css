@@ -1,0 +1,182 @@
+
+:root {
+    --fondo: #ffffff;
+    --container: #ffffff;
+    --menu: #3754b3;
+  }
+  
+*{
+    font-family: 'Montserrat ';
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.main_container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu_item{
+    width: 100%;
+    height: 10%;
+    background-color: var(--menu);
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    z-index: 100;
+
+}
+
+
+
+.menu_icono{
+    height: 150px;
+    width: 150px;
+    text-align: center;
+}
+
+
+.icono{
+    font-size: 60px;
+    margin-top: 40px;
+}
+
+.menu_saldo{
+    width: 60%;
+    height: 60%;
+    margin-right: 70px;
+    background-color: rgb(255, 255, 255);
+    border: solid 3px black;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.saldo_texto{
+    margin-left: 30px;
+    width: 30%;
+}
+
+.saldo_cantidad{
+
+    color: var(--menu);
+}
+
+.saldo_logo{
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    background-image: url('../pictures/logoT.png');
+    background-size: contain;
+    background-repeat: no-repeat ;
+}
+
+.menu_desplegable{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    height: 600px;
+    width: 100%;
+    background-color: rgb(221, 215, 215);
+    top: -600px; 
+    z-index: 70;
+    text-align: center;
+    transition: all 0.5s;
+    
+}
+
+.menu_desplegable_abajo{
+    top: 163px;
+}
+
+.menu_desplegable_item{
+    color: black;
+    font-size: 25px;
+    height: 120px;
+    width: 100%;
+    border-bottom: solid 4px black;
+    background-color: #5673cf;
+}
+
+.tipo2{
+
+    border-top: solid 4px black;
+    
+}
+
+
+.page_item{
+    position: absolute;
+    top: 163px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.evento{
+    width: 100%;
+    height: 300px;
+    border-bottom: 3px solid black;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(199, 194, 194);
+
+}
+
+.foto{
+height: 100%;
+width: 50%;
+}
+
+.info{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    gap: 5px;
+}
+
+.titulo{
+
+}
+
+.precio{
+
+}
+
+.entradasRestantes{
+
+}
+
+.fecha{
+
+}
+
+.comprar{
+    width: 60%;
+    height: 40px;
+    font-size: 30px;
+    background-color: var(--menu);
+    color: white;
+
+}
