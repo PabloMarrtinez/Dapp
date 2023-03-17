@@ -17,7 +17,7 @@ contract PROXY{
     address private admin;                                                      // Dirección administradora
     mapping(uint24 => Evento) private events;                                   // Asocia cada ID de evento a sus atributos
     uint24 private nextID;                                                      // ID del siguiente evento
-    mapping (uint256 => uint24) private ticketPrice;                            // Asocia a cada ticket en reventa su precio
+    mapping (uint256 => uint24) public ticketPrice;                            // Asocia a cada ticket en reventa su precio
     mapping(uint24 => mapping(uint256 => uint256)) private ticketsOnsale;       // Asocia a cada evento sus tickets en reventa
 
     ERC20Contract private erc20;                                                // Dirección del contrato erc20

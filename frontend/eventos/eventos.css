@@ -136,14 +136,47 @@ html, body {
     border-bottom: 3px solid black;
     display: flex;
     flex-direction: row;
-    background-color: rgb(199, 194, 194);
+    background-color: rgb(255, 251, 251);
 
 }
 
 .foto{
-height: 100%;
-width: 50%;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.duki{
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-image: url(../pictures/concierto1.png);
+    height: 80%;
+    width: 80%;
+
+    border-radius: 20px;
+}
+
+.melendi{
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-image: url(../pictures/concierto2.png);
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.tini{
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-image: url(../pictures/concierto3.png);
+    height: 80%;
+    width: 80%;
+    border-radius: 20px;
+}
+
+
 
 .info{
     height: 100%;
@@ -156,7 +189,7 @@ width: 50%;
     gap: 5px;
 }
 
-.titulo{
+/* .titulo{
 
 }
 
@@ -171,7 +204,8 @@ width: 50%;
 .fecha{
 
 }
-
+ */
+ 
 .comprar{
     width: 60%;
     height: 40px;

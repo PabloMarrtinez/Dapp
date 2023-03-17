@@ -36,13 +36,6 @@ html, body {
 
 }
 
-.page_item{
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-
-}
 
 .menu_icono{
     height: 150px;
@@ -122,4 +115,79 @@ html, body {
 
     border-top: solid 4px black;
     
+}
+
+.page_item{
+    position: absolute;
+    top: 200px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;;
+    align-items: center;
+    gap: 20px;
+
+}
+
+
+.ticket{
+    width: 90%;
+    height: 200px;
+    border: 3px solid black;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+
+}
+
+.foto{
+    text-align: center;
+    width: 30%;
+    height: 80%;
+}
+
+.info{
+    font-size: 28px;
+    text-align: center;
+    width: 40%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo{
+
+}
+
+.fecha{
+
+}
+
+.tokenId{
+
+}
+
+.vender{
+    text-align: center;
+    width: 20%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.boton_vender{
+    color: white;
+    font-size: 30px;
+    width: 150px;
+    height: 50px;
+    background-color: var(--menu);
 }
