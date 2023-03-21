@@ -6,7 +6,8 @@
   "scripts": {
     "compile": "node ./contracts/js/compile.js",
     "deploy": "node ./contracts/js/deploy.js",
-    "dev": "lite-server"
+    "dev": "lite-server",
+    "events": "node ./frontend/admin/addEvents.js"
   },
   "keywords": [],
   "author": "",

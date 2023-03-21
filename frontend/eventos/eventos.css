@@ -163,7 +163,7 @@ html, body {
     align-items: center;
 }
 
-.duki{
+.Duki{
     background-size: contain;
     background-repeat: no-repeat ;
     background-image: url(../pictures/concierto1.png);
@@ -171,7 +171,7 @@ html, body {
     width: 80%;
 }
 
-.melendi{
+.Melendi{
     background-size: contain;
     background-repeat: no-repeat ;
     background-image: url(../pictures/concierto2.png);
@@ -179,10 +179,18 @@ html, body {
     width: 80%;
 }
 
-.tini{
+.Tini{
     background-size: contain;
     background-repeat: no-repeat ;
     background-image: url(../pictures/concierto3.png);
+    height: 80%;
+    width: 80%;
+}
+
+.Pikeras{
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-image: url(../pictures/concierto4.png);
     height: 80%;
     width: 80%;
 }
