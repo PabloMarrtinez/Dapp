@@ -25,7 +25,7 @@ html, body {
 
 .menu_item{
     width: 100%;
-    height: 10%;
+    height: 110.8px;
     background-color: var(--menu);
     position: fixed;
     display: flex;
@@ -52,13 +52,18 @@ html, body {
 
 
 .icono{
-    font-size: 60px;
-    margin-top: 40px;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-right: 40px;
+}
+
+.icono:hover{
+    cursor: pointer;
 }
 
 .menu_saldo{
-    width: 60%;
-    height: 60%;
+    width: 300px;
+    height: 40px;
     margin-right: 70px;
     background-color: rgb(255, 255, 255);
     border: solid 3px black;
@@ -67,23 +72,24 @@ html, body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .saldo_texto{
+    font-size: 20px;
     margin-left: 30px;
-    width: 30%;
+    width: 20%;
 }
 
 .saldo_cantidad{
-
+    font-size: 20px;
     color: var(--menu);
 }
 
 .saldo_logo{
     margin-left: 10px;
-    width: 60px;
-    height: 60px;
+    width: 30px;
+    height: 30px;
     background-image: url('../pictures/logoT.png');
     background-size: contain;
     background-repeat: no-repeat ;
@@ -95,9 +101,9 @@ html, body {
     flex-direction: column;
 
     align-items: center;
-    height: 600px;
+    height: 400px;
     width: 100%;
-    background-color: rgb(221, 215, 215);
+    background-color: var(--menu);
     top: -600px; 
     z-index: 70;
     text-align: center;
@@ -106,20 +112,56 @@ html, body {
 }
 
 .menu_desplegable_abajo{
-    top: 163px;
+    top: 108px;
 }
 
 .menu_desplegable_item{
     color: black;
-    font-size: 25px;
+    font-size: 15px;
     height: 120px;
     width: 100%;
     border-bottom: solid 4px black;
     background-color: #5673cf;
 }
 
+.menu_desplegable_item:hover{
+    background-color: var(--menu);
+    cursor: pointer;
+
+}
+
 .tipo2{
 
     border-top: solid 4px black;
     
+}
+
+.page_item{
+    position: absolute;
+    top: 130px;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.direccion{
+    width: 80%;
+    height: 50px;
+    background-color: gray;
+    border-radius: 40px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.connect{
+    width: 200px;
+    height: 60px;
+    background-color: #9eb3f3;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 15px;
 }

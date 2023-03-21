@@ -22,7 +22,7 @@ contract ERC20 {
         proxy = _proxy;
         name = "TIXS";
         symbol = "TIX";
-        decimals = 4;
+        decimals = 18;
         //La blockchain no utiliza decimales
         totalSupply = 100000000000000 * (uint256(10) ** decimals);
         balanceOf[msg.sender] = totalSupply;

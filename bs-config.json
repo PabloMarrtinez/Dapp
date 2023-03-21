@@ -1,0 +1,12 @@
+{
+    "server": {
+      "baseDir": "./frontend",
+      "routes": {
+        "/eventos": "eventos",
+        "/perfil": "perfil",
+        "/marketplace": "marketplace",
+        "/entradas": "entradas"
+      }
+    }
+  }
+  

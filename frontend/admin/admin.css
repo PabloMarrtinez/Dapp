@@ -1,0 +1,80 @@
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --fondo: #ffffff;
+    --container: #ffffff;
+    --menu: #3754b3;
+  }
+
+.container{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle{
+    text-align: center;
+    color: black !important;
+    font-size: 50px !important;
+}
+
+.newEvent_item{
+    font-size: 30px;
+    width: 600px;
+    height: 50px;
+    text-align: center;
+    color: gray;
+
+}
+
+
+.newEvent{
+    height: 50%;
+    width: 100%;
+    background-color: var(--menu);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    
+}
+
+.atributos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button_create_event{
+    margin-top: 20px;
+    font-size: 30px;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    background-color: rgb(43, 107, 35);
+    color: black;
+}
+
+.modifyEvent{
+    height: 50%;
+    width: 100%;
+    background-color: var(--menu);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}

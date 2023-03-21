@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./web3.min.js"></script>
+    <meta charset="UTF-8">
+	<title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="admin.css">
+    
+
+</head>
+<body>
+    <div class="container">
+        
+        <div class="newEvent">
+            <h1 class="tittle"> Crea un nuevo evento</h1>
+            <div class="atributos">
+                <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
+                <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
+                <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
+                <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
+                <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
+                <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
+                <input type="button" class="button_create_event" value="Crear evento">
+            </div>
+           
+        </div>
+        <div class="modifyEvent">
+            <h1 class="tittle"> Modifica un evento</h1>
+            <div class="atributos">
+                <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
+                <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
+                <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
+                <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
+                <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
+                <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
+                <input type="button" class="button_create_event" value="Modificar evento">
+            </div>
+           
+        </div>
+    </div>
+
+
+
+
+    <script src="./admin.js"></script>
+</body>
+</html>
