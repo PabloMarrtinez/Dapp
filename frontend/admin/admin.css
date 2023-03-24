@@ -59,7 +59,8 @@ html,body{
     justify-content: center;
 }
 
-.button_create_event{
+
+.button_create_event, .init_proxy{
     margin-top: 20px;
     font-size: 30px;
     width: 400px;
@@ -99,7 +100,7 @@ html,body{
     width: 100%;
     background-color: black;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }

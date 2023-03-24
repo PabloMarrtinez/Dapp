@@ -33,6 +33,7 @@ contract PROXY{
         uint16 minPrice;                // Precio mínimo de reventa
         uint16 maxPrice;                // Precio máximo de reventa
         string name;                    // Nombre del evento    
+        uint24 eventID;
     }
 
     // Eventos
@@ -80,6 +81,7 @@ contract PROXY{
         events[nextID].minPrice = _minPrice;
         events[nextID].maxPrice = _maxPrice;
         events[nextID].name = _name;
+        events[nextID].eventID = nextID;
         ticketsOnsale[nextID][FIRST_ADDRESS] = FIRST_ADDRESS;
         //emit newEvent(events[nextID]);
         nextID++;
@@ -100,12 +102,14 @@ contract PROXY{
         events[_id].name = _name;
     }
 
+    function infoEvent(uint24 _eventId) public view returns(Evento memory){
+        require(_eventId < nextID,"info event error: that event does not exist.");
+        return events[_eventId];
+    }
+
+
     // Función para consultar los eventos activos.
      function getActiveEvents(uint24 _index) public view returns (Evento[] memory) {
-
-        //
-
-        //
         
         require(_index < nextID,"GetEvents Error: Index value should be greater than the last eventID.");
         uint256 activeCount = 0;

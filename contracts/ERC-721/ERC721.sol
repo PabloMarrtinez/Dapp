@@ -158,7 +158,8 @@ contract ERC721{
         return FIRST_TOKEN;
     }
 
-    function getallUsers (address _address) view public returns(uint256[] memory){
+    function getallTokens (address _address) view public returns(uint256[] memory){
+        if (balanceOf(_address) == 0) return new uint256[](0);
         uint256 [] memory allUsers = new uint256 [](balanceOf(_address));
         uint256 currentToken = NFTs[_address][FIRST_TOKEN];
         for (uint256 index = 0; currentToken != FIRST_TOKEN; index++) {

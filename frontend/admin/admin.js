@@ -1,4 +1,13 @@
-const addressContractProxy = '';
+var data;
+
+async function obtenerDatos () {
+  const respuesta = await fetch('../vars/var.json');
+  data = await respuesta.json();
+
+};
+
+obtenerDatos();
+
 
 const abi = [];
 

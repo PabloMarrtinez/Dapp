@@ -5,7 +5,7 @@ const { abiErc20, bytecodeErc20, abiErc721, bytecodeErc721, abiPROXY, bytecodePR
 
 // export NODE_OPTIONS=--openssl-legacy-provider
 
-const mnemonic = 'extra birth trash creek blossom chaos hire endorse cram smile weekend switch';
+const mnemonic = 'way grid install engage brisk move tourist cement quiz cat promote advance';
 const provider = new HDWalletProvider(mnemonic, 'http://127.0.0.1:8545');
 
 const web3 = new Web3(provider);
@@ -38,6 +38,8 @@ const deploy = async () => {
     console.log("abi ERC721: "+JSON.stringify(resultERC721.options.jsonInterface));
     console.log();console.log();
     console.log("abi PROXY: "+JSON.stringify(resultProxy.options.jsonInterface));
+
+    
 
 };
 
