@@ -1,5 +1,6 @@
 {
-    "addressContractERC20": "0x0365c605B8D851Fe8674EcfBBDf1BFe27D7B38a8",
-    "addressContractProxy": "0xD0C9b3546bAEE67c82F9334EE826bb73ACae2Eb6",
-    "addressContractERC721": "0x5d2c03CBDB6ba0Da2a1185094a2363F92f1fcFF0"
+    "addressContractERC20": "0x147192a1c5691BB81D4f80ad0F7CBb01f6077525",
+    "addressContractProxy": "0x7F8d8d38d08E86c222Ce5bb08b2466b9E8344344",
+    "addressContractERC721": "0x3288C59326be8504fB0730DDb3Db8F95C91694dC"
 }
+

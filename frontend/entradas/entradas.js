@@ -6,6 +6,23 @@ const abiERC721 = [{"inputs":[{"internalType":"address","name":"_proxy","type":"
 
 var data;
 
+let identificadorEventoComprar;
+
+const modal = document.querySelector('.modal'); 
+
+const page_item = document.querySelector('.page_item');
+
+const botonCerrar = document.querySelector('.botton_cerrar'); 
+
+
+var ventaPrecioMin;
+var ventaPrecioMax;
+var ventaID;
+
+botonCerrar.addEventListener('click', () => {
+  modal.classList.remove('modal_flex'); 
+});
+
 async function obtenerDatos () {
   const respuesta = await fetch('../vars/var.json');
   data = await respuesta.json();
@@ -60,6 +77,8 @@ let account;
 let proxyContract;
 let erc20contract;
 let erc721contract;
+var tokenID;
+let x=0;
 
 async function carga() {
   const address = document.querySelector('.direccion');
@@ -67,38 +86,153 @@ async function carga() {
   const accounts = await ethereum.request({method: 'eth_requestAccounts'});
   account = accounts[0];
 
-  contract(); 
+  await contract(); 
 }
 
-function contract() {
+async function contract() {
   web3 = new Web3(window.ethereum);
   erc20contract = new web3.eth.Contract(abiERC20,data.addressContractERC20);
   proxyContract = new web3.eth.Contract(abiProxy,data.addressContractProxy);
   erc721contract = new web3.eth.Contract(abiERC721,data.addressContractERC721);
-  interact();
+  await interact();
 }
 
-function interact(){ 
+async function interact(){ 
   const address = document.querySelector('.direccion');
-  erc20contract.methods.balanceOf(account).call().then(res => {
+  await erc20contract.methods.balanceOf(account).call().then(res => {
       const amount = web3.utils.fromWei(res, 'ether');
       const valueSpan = document.querySelector('.saldo_cantidad');
       valueSpan.innerHTML = amount;
   });
-  console.log(account);
-  console.log(data.addressContractERC721);
-  console.log(erc721contract);
-  erc721contract.methods.getallTokens(account).call().then(res => {
-    console.log(res);
+
+  await erc721contract.methods.getallTokens(account).call().then(res1 => {
+    for (var i = 0; i < res1.length; i++) {
+      proxyContract.methods.getEventID(res1[i]).call().then(res => {
+        
+        proxyContract.methods.infoEvent(res).call().then(res => {
+          let id = res1[x];
+          x++;
+          addTicket(res[7],"6/6/2023",res[5],res[6],id);
+          if (res1.length == x) initbuttons();
+        });
+    });
+    }
+
 });
 
 }
 
-function init() {
-  
-  carga();
+function initbuttons(){
+  const botones = document.querySelectorAll('.boton_vender'); 
+  console.log(botones);
+  botones.forEach(boton => {
+    boton.addEventListener('click', () => {
+      ventaPrecioMin = boton.classList[1];
+      ventaID = boton.classList[3];
+      ventaPrecioMax = boton.classList[2];
+      modal.classList.add('modal_flex');
+    });
+  });
+}
+
+async function init() {
+
+  await carga();
+}
+
+function addTicket(_nombre, _fecha, minprice, maxPrice, _id){
+
+  var ticket = document.createElement("div");
+  ticket.classList.add("ticket");
+
+  var foto = document.createElement("div");
+  foto.classList.add("foto");
+
+  var autor = document.createElement("div");
+  autor.classList.add(_nombre);
+
+  var info = document.createElement("div");
+  info.classList.add("info");
+
+  var titulo = document.createElement("div");
+  titulo.classList.add("titulo");
+  titulo.textContent = _nombre;
+  var fecha = document.createElement("div");
+  fecha.classList.add("fecha");
+  fecha.textContent = _fecha;
+
+  var minP = document.createElement("div");
+  minP.classList.add("minP");
+  minP.textContent = "Precio mínimo: "+minprice;
+
+  var maxP = document.createElement("div");
+  maxP.classList.add("maxP");
+  maxP.textContent = "Precio máximo: "+maxPrice;
+
+
+
+  var vender = document.createElement("div");
+  vender.classList.add("vender");
+
+  var boton_vender = document.createElement("input");
+  boton_vender.classList.add("boton_vender");
+  boton_vender.classList.add(minprice);
+  boton_vender.classList.add(maxPrice);
+  boton_vender.classList.add(_id);
+
+  boton_vender.setAttribute("type", "submit");
+  boton_vender.setAttribute("value", "vender");
+
+  foto.appendChild(autor);
+  info.appendChild(titulo);
+  info.appendChild(fecha);
+  info.appendChild(minP);
+  info.appendChild(maxP);
+
+  vender.appendChild(boton_vender);
+
+  ticket.appendChild(foto);
+  ticket.appendChild(info);
+  ticket.appendChild(vender);
+
+  page_item.appendChild(ticket);
+
+
+
+
 
 }
+
+const precioVenta = document.querySelector('.precioVenta'); 
+
+async function venderEntrada(){
+  console.log(precioVenta.value);
+  if (precioVenta.value < ventaPrecioMin || precioVenta.value > ventaPrecioMax) alert(`Precio de venta no válido, debe estar comprendido entre ${ventaPrecioMin}, y ${ventaPrecioMax} TOKS`);
+  else{
+    console.log(ventaPrecioMin);
+    console.log(ventaID);
+    console.log(ventaPrecioMax);
+    modal.classList.remove('modal_flex'); 
+  }
+
+  proxyContract.methods.sellNft(ventaID,precioVenta.value).send({ from: account }).then(res => {
+    console.log(res);
+
+    
+  }); 
+}
+
+const confirmarCompra = document.querySelector('.button_confirm'); 
+const cancelarCompra = document.querySelector('.button_cancel'); 
+
+confirmarCompra.addEventListener('click', () => {
+  venderEntrada();
+
+});
+
+cancelarCompra.addEventListener('click', () => {
+  modal.classList.remove('modal_flex'); 
+});
 
 window.onload = init();
                                                              

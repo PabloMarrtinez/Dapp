@@ -49,6 +49,7 @@ button_create_event.addEventListener('click', function() {
 
 const init_proxy = document.querySelector('.init_proxy');
 init_proxy.addEventListener('click', async function() {
+  console.log('hola');
   const accounts = await ethereum.request({method: 'eth_requestAccounts'});
   account = accounts[0];
   web3 = new Web3(window.ethereum);
