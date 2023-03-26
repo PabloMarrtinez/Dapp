@@ -140,88 +140,15 @@ html, body {
     z-index: 50;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     
 }
 
-.evento{
-    width: 100%;
-    height: 300px;
-    border-bottom: 3px solid black;
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(255, 255, 255);
-
-}
-
-.foto{
-    height: 100%;
-    width: 55%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Duki{
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-image: url(../pictures/concierto1.png);
-    height: 80%;
-    width: 80%;
 
 
-}
 
-.Melendi{
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-image: url(../pictures/concierto2.png);
-    height: 80%;
-    width: 80%;
-}
 
-.Tini{
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-image: url(../pictures/concierto3.png);
-    height: 80%;
-    width: 80%;
-}
-
-.Pikeras{
-    background-size: contain;
-    background-repeat: no-repeat ;
-    background-image: url(../pictures/concierto4.png);
-    height: 80%;
-    width: 80%;
-}
-
-.info{
-    height: 100%;
-    width: 45%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 20px;
-    align-items: center;
-    gap: 5px;
-}
-
-/* .titulo{
-
-}
-
-.precio{
-
-}
-
-.entradasRestantes{
-
-}
-
-.fecha{
-
-}
- */
  
 .comprar{
     width: 60%;
@@ -312,28 +239,47 @@ html, body {
     cursor: pointer;
 }
 
-.modalEntradaItem{
-    width: 100%;
-    height: 70px;
-    border-top: 2px solid black;
+.recuadroPagar{
+    margin-top: 30px;
+    width: 80%;
+    height: 300px;
+    border: 2px solid black;
+    border-radius: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    color: white;
-    font-size: 20px;
+
 }
 
-.botonComprar{
-    width: 90px;
-    height: 40px;
+.direccionEnvio{
+    border: none;
+    border-bottom: 5px solid var(--menu);
+    width: 80%;
+    height: 30px;
     font-size: 20px;
+    text-align: center;
+}
+
+.cantidad{
+    border: none;
+    border-bottom: 5px solid var(--menu);
+    width: 40%;
+    height: 30px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.botonEnvio{
+    width: 40%;
+    height: 30px;
+    font-size: 18px;
     background-color: var(--menu);
     color: white;
 }
 
-.botonComprar:hover{
-    background-color: var(--azul_claro);
+.botonEnvio:hover{
     cursor: pointer;
+    background-color: var(--azul_claro);
 
 }

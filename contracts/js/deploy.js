@@ -5,7 +5,7 @@ const { abiErc20, bytecodeErc20, abiErc721, bytecodeErc721, abiPROXY, bytecodePR
 
 // export NODE_OPTIONS=--openssl-legacy-provider
 
-const mnemonic = 'project border gas egg sentence core claw decide garbage amazing buffalo divorce';
+const mnemonic = 'practice amazing auto result school cinnamon vague prevent slice such legend baby';
 const provider = new HDWalletProvider(mnemonic, 'http://127.0.0.1:8545');
 
 const web3 = new Web3(provider);

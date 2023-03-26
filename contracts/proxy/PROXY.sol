@@ -17,7 +17,7 @@ contract PROXY{
     address private admin;                                                      // Dirección administradora
     mapping(uint24 => Evento) private events;                                   // Asocia cada ID de evento a sus atributos
     uint24 private nextID;                                                      // ID del siguiente evento
-    mapping (uint256 => uint24) public ticketPrice;                            // Asocia a cada ticket en reventa su precio
+    mapping (uint256 => uint56) public ticketPrice;                            // Asocia a cada ticket en reventa su precio
     mapping(uint24 => mapping(uint256 => uint256)) private ticketsOnsale;       // Asocia a cada evento sus tickets en reventa
 
     ERC20Contract private erc20;                                                // Dirección del contrato erc20
@@ -29,9 +29,9 @@ contract PROXY{
         uint24 lastTicket;              // Último ticket vendido del evento.
         bool soldOut;                   // Variable que indica que se han vendido todas las entradas
         bool active;                    // Variable que indica si por algún motivo externo el concierto se encuentra desactivado o no
-        uint16 defaultPrice;            // Precio base
-        uint16 minPrice;                // Precio mínimo de reventa
-        uint16 maxPrice;                // Precio máximo de reventa
+        uint56 defaultPrice;            // Precio base
+        uint56 minPrice;                // Precio mínimo de reventa
+        uint56 maxPrice;                // Precio máximo de reventa
         string name;                    // Nombre del evento    
         uint24 eventID;
     }
@@ -71,7 +71,7 @@ contract PROXY{
     /* GESTIÓN DE EVENTOS */
 
     // Crea un nuevo evento
-    function newEvent(uint24 _maxTicket, uint16 _defaultPrice, uint16 _minPrice, uint16 _maxPrice, string memory _name) public onlyOwner returns(uint24){
+    function newEvent(uint24 _maxTicket, uint56 _defaultPrice, uint56 _minPrice, uint56 _maxPrice, string memory _name) public onlyOwner returns(uint24){
         require(_defaultPrice > 0 && _minPrice > 0 && _maxPrice > 0, "Error creating a new event: The price should be more than zero.");
         events[nextID].maxTicket = _maxTicket;
         events[nextID].lastTicket = 0;
@@ -90,7 +90,7 @@ contract PROXY{
     }
 
     // Modifica algún parámetro de un evento
-    function modifyEvent(uint24 _maxTicket, uint16 _defaultPrice, uint16 _minPrice, uint16 _maxPrice, string memory _name, bool _active, uint24 _id) public onlyOwner{
+    function modifyEvent(uint24 _maxTicket, uint56 _defaultPrice, uint56 _minPrice, uint56 _maxPrice, string memory _name, bool _active, uint24 _id) public onlyOwner{
         require(_defaultPrice > 0 && _minPrice > 0 && _maxPrice > 0, "Error creating a new event: The price should be more than zero.");
         require(events[_id].lastTicket < _maxTicket,"Modify event error: Max tickets value is not valid");
         require(_id < nextID,"Modify event error: that event does not exist.");
@@ -140,14 +140,14 @@ contract PROXY{
     }
 
     // Comprueba que el precio sea válido.
-    function validPrice(uint24 _eventID, uint24 price)public view returns(bool){
+    function validPrice(uint24 _eventID, uint56 price)public view returns(bool){
         return (events[_eventID].maxPrice >= price && events[_eventID].minPrice <= price);
     }
 
     /*   Marketplace   */
 
     // Función para poner un NFT a la venta, unicamente el propietario (No un dirección autorizada)
-    function sellNft(uint256 _tokenId, uint16 _price) public {
+    function sellNft(uint256 _tokenId, uint56 _price) public {
         require(erc721.ownerOf(_tokenId) == msg.sender,"Error in sale: Token doesn't exists or you aren't the owner.");
         uint24 _eventId = getEventID(_tokenId);
         require(validPrice(_eventId,_price),"Error in sale: The price isn't valid.");

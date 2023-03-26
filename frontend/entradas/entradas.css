@@ -229,6 +229,15 @@ html, body {
     background-color: var(--menu);
 }
 
+.boton_cancelarVenta{
+    color: black    ;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
+    background-color: red;
+
+}
+
 
 .modal{
     position: absolute;
@@ -328,4 +337,8 @@ html, body {
     border-radius: 20px;
     text-align: center;
     font-size: 15px;
+}
+
+.EnVenta{
+    color: red;
 }

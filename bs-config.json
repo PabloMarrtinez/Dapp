@@ -5,7 +5,8 @@
         "/eventos": "eventos",
         "/perfil": "perfil",
         "/marketplace": "marketplace",
-        "/entradas": "entradas"
+        "/entradas": "entradas",
+        "/Transferencia": "transferencia"
       }
     }
   }
