@@ -6,7 +6,7 @@ async function obtenerDatos () {
 
 };
 
-obtenerDatos();
+
 
 const MenuIcono = document.querySelector('.menu_icono');
 const menu_desplegable = document.querySelector('.menu_desplegable');
@@ -60,6 +60,7 @@ let web3;
 let account;
 let ERC20Contract;
 let proxyContract;
+let amount;
 
 async function carga() {
   const address = document.querySelector('.direccion');
@@ -133,13 +134,19 @@ async function consultarEntradasReventa(_id){
           const botones = document.querySelectorAll('.botonComprar'); 
           console.log(botones);
           botones.forEach(boton => {
-            boton.addEventListener('click', () => {
+            boton.addEventListener('click',async () => {
+              if(amount < boton.classList[2]/10000){
+                alert('No tienes suficientes fondos');
+              }
+              else{
+                await proxyContract.methods.buyToken(boton.classList[1],boton.classList[2]).send({ from: account }).then(res => {
+                  console.log(res);
+              
+                  
+                }); 
+                location.reload();
+              }
 
-              proxyContract.methods.buyToken(boton.classList[1],boton.classList[2]).send({ from: account }).then(res => {
-                console.log(res);
-            
-                
-              }); 
       
             });
           });
@@ -218,10 +225,9 @@ async function addEvent(_nombre, _id, _fecha){
   page_item.appendChild(evento);
 }
 
-function init() {
-  
+async function init() {
+  await obtenerDatos();
   carga();
-
 }
 
 window.onload = init();

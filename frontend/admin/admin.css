@@ -20,20 +20,30 @@ html,body{
     width: 100%;
     background-color: black;
     display: flex;
+    flex-direction: row;
+}
+
+.left{
+    height: 100%;
+    width: 50%;
+    display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap:30px;
+
 }
 
 .tittle{
     text-align: center;
-    color: black !important;
-    font-size: 50px !important;
+    color: rgb(255, 255, 255) !important;
+    font-size: 30px !important;
 }
 
 .newEvent_item{
-    font-size: 30px;
-    width: 600px;
-    height: 50px;
+    font-size: 20px;
+    width: 400px;
+    height: 30px;
     text-align: center;
     color: gray;
 
@@ -41,13 +51,14 @@ html,body{
 
 
 .newEvent{
-    height: 50%;
-    width: 100%;
-    background-color: var(--menu);
+    height: 33%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
 
     
 }
@@ -62,46 +73,105 @@ html,body{
 
 .button_create_event, .init_proxy{
     margin-top: 20px;
-    font-size: 30px;
-    width: 400px;
-    height: 50px;
+    font-size: 20px;
+    width: 300px;
+    height: 35px;
     text-align: center;
     background-color: rgb(43, 107, 35);
     color: black;
 }
 
 .modifyEvent{
-    height: 50%;
-    width: 100%;
-    background-color: var(--menu);
+    height: 36%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    gap: 15px;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
 }
 
+.modoMofificarEvento{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+}
 
+.button_modo_evento{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
 
+.elegido{
+    background-color: rgb(167, 160, 160);
+}
 
+.subirEventos{
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
 
+}
 
+.eventosAutomatico{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    background-color: rgb(43, 107, 35);
+    color: black;
+}
 
+.eventosAutomaticoTitulo{
+    color: white;
+}
 
-
-
-
-
-
-
-
-
-.containerEjemplo{
+.right{
     height: 100%;
-    width: 100%;
-    background-color: black;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 40px;
+
+}
+
+.direccionERC20, .direccionERC721, .direccionPorDefecto{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 40px;
+    border: 2px solid white;
+    border-radius: 20px;
+
+}
+
+
+
+.botonContratoERC20, .botonContratoERC721, .boton_direcciones_porDefecto{
+    font-size: 20px;
+    width: 300px;
+    height: 35px;
+    text-align: center;
+    background-color: rgb(43, 107, 35);
+    color: black;
 }
 

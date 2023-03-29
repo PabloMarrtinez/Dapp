@@ -11,38 +11,69 @@
 </head>
 <body>
     <div class="container">
-        
-        <div class="newEvent">
-            <h1 class="tittle"> Crea un nuevo evento</h1>
-            <div class="atributos">
-                <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
-                <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
-                <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
-                <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
-                <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
-                <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
-                <input type="button" class="button_create_event" value="Crear evento">
+        <div class="left"> 
+            <div class="newEvent">
+                <h1 class="tittle"> Crea un nuevo evento</h1>
+                <div class="atributos">
+                    <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
+                    <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
+                    <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
+                    <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
+                    <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
+                    <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
+                    <input type="button" class="button_create_event" value="Crear evento">
+                </div>
+               
             </div>
-           
-        </div>
-        <div class="modifyEvent">
-            <h1 class="tittle"> Modifica un evento</h1>
-            <div class="atributos">
-                <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
-                <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
-                <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
-                <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
-                <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
-                <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
-                <input type="button" class="button_create_event" value="Modificar evento">
+            <div class="modifyEvent">
+                <h1 class="tittle"> Modifica un evento</h1>
+                <div class="atributos">
+                    <input type="number" class="newEvent_item ID" placeholder="Identificador del evento">
+                    <input type="number" class="newEvent_item minPrice" placeholder="Precio mínimo de reventa">
+                    <input type="number" class="newEvent_item defaultPrice" placeholder="Precio de salida">
+                    <input type="number" class="newEvent_item maxPrice" placeholder="Precio máximo de reventa">
+                    <input type="number" class="newEvent_item tickets" placeholder="Número de entradas">
+                    <input type="text" class="newEvent_item name"  placeholder="Nombre del evento">
+                    <input type="date" class="newEvent_item date" placeholder="Fecha del evento">
+                    <div class="newEvent_item modoMofificarEvento">
+                        <input type="button" class="button_modo_evento elegido" value="Evento activo">
+                        <input type="button" class="button_modo_evento" value="Evento no activo">
+                    </div>
+                    <input type="button" class="button_create_event" value="Modificar evento">
+                </div>
+               
             </div>
-           
+
+
+
         </div>
+        <div class="right">
+            <div class="direccionERC20">
+                <h1 class="tittle"> Modificar dirección ERC-20</h1>
+                <input type="text" class="newEvent_item name"  placeholder="Nuevo dirección contrato ERC-20">
+                <input type="button" class="botonContratoERC20" value="Cambiar dirección">
+            </div>
+            <div class="direccionERC721">
+                <h1 class="tittle"> Modificar dirección ERC-721</h1>
+                <input type="text" class="newEvent_item name"  placeholder="Nuevo dirección contrato ERC-721">
+                <input type="button" class="botonContratoERC721" value="Cambiar dirección">
+            </div>
+            <div class="direccionPorDefecto">
+                <h1 class="tittle">Inicializar con la dirección por defecto</h1>
+                <input type="button" class="boton_direcciones_porDefecto" value="Cambiar direcciones">
+            </div>
+            <div class="subirEventos">
+                <h1 class="eventosAutomaticoTitulo">Subir eventos por defecto</h1>
+                <input type="button" class="eventosAutomatico" value="Subir eventos">
+            </div>
+
+        </div>
+
     </div>
 
 
 
 
-    <script src="./addEvents.js"></script>
+    <script src="./admin.js"></script>
 </body>
 </html>

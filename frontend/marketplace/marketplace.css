@@ -229,6 +229,7 @@ html, body {
     font-size: 20px;
     background-color: var(--menu);
     color: white;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 
 }
 
@@ -261,12 +262,14 @@ html, body {
 .modal_pagar{
     max-height: 80%;
     width: 70%;
+    max-width: 800px;
     background-color: rgb(63, 57, 57);
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 
 }
 
@@ -297,11 +300,12 @@ html, body {
 
 
 .botton_cerrar{
-    width: 92%;
+    margin-top: 20px;
+    width: 90%;
     display:flex;
     flex-direction: row-reverse;
     color: white;
-    height: 14%;
+    height: 12%;
 
     font-size: 30px;
     

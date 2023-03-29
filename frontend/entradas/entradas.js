@@ -29,7 +29,7 @@ async function obtenerDatos () {
 
 };
 
-obtenerDatos();
+
 
 
 const MenuIcono = document.querySelector('.menu_icono');
@@ -140,18 +140,19 @@ function initbuttons(){
   const botones2 = document.querySelectorAll('.boton_cancelarVenta'); 
 
   botones2.forEach(boton => {
-    boton.addEventListener('click', () => {
+    boton.addEventListener('click', async () => {
       console.log(boton.classList[1]);
-      proxyContract.methods.cancelSellNft(boton.classList[1]).send({ from: account }).then(res => {
+      await proxyContract.methods.cancelSellNft(boton.classList[1]).send({ from: account }).then(res => {
 
       });
+      location.reload();
     });
   });
 
 }
 
 async function init() {
-
+  await obtenerDatos();
   await carga();
 }
 
@@ -247,18 +248,16 @@ async function addTicket(_nombre, _fecha, minprice, maxPrice, _id,eventID, x1, x
 const precioVenta = document.querySelector('.precioVenta'); 
 
 async function venderEntrada(){
-  console.log(precioVenta.value);
-  if (precioVenta.value < ventaPrecioMin || precioVenta.value > ventaPrecioMax) alert(`Precio de venta no válido, debe estar comprendido entre ${ventaPrecioMin/10000}, y ${ventaPrecioMax/10000} TOKS`);
+  if (precioVenta.value < ventaPrecioMin/10000 || precioVenta.value > ventaPrecioMax/10000) alert(`Precio de venta no válido, debe estar comprendido entre ${ventaPrecioMin/10000}, y ${ventaPrecioMax/10000} TOKS`);
   else{
-    console.log(ventaPrecioMin);
-    console.log(ventaID);
-    console.log(ventaPrecioMax);
+
     modal.classList.remove('modal_flex'); 
-    proxyContract.methods.sellNft(ventaID,precioVenta.value*10000).send({ from: account }).then(res => {
+    await proxyContract.methods.sellNft(ventaID,precioVenta.value*10000).send({ from: account }).then(res => {
       console.log(res);
   
       
     }); 
+    location.reload();
   }
 
 

@@ -19,7 +19,7 @@ const events = [
     [10, 200000, 100000, 300000, "Pikeras"],
     [20, 150000, 100000, 300000, "Tini"],
     [2, 100000, 100000, 300000, "Melendi"]
-  ];
+];
   
 
 async function cargarCuenta(){
@@ -48,7 +48,6 @@ button_create_event.addEventListener('click', function() {
 
 const init_proxy = document.querySelector('.init_proxy');
 init_proxy.addEventListener('click', async function() {
-  console.log('hola');
   const accounts = await ethereum.request({method: 'eth_requestAccounts'});
   account = accounts[0];
   web3 = new Web3(window.ethereum);

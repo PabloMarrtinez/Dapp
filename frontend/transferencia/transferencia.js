@@ -6,7 +6,6 @@ async function obtenerDatos () {
 
 };
 
-obtenerDatos();
 
 
 
@@ -65,9 +64,11 @@ async function carga() {
   contract(); 
 }
 
+
 async function init() {
   
   carga();
+  await obtenerDatos();
   const accounts = await ethereum.request({method: 'eth_requestAccounts'});
   account = accounts[0];
   contract(); 
@@ -93,7 +94,7 @@ function interact(){
 const envio = document.querySelector('.botonEnvio');
 
 
-envio.addEventListener('click', function() {
+envio.addEventListener('click', async function() {
   const direccion = document.querySelector('.direccionEnvio');
   const cantidad = document.querySelector('.cantidad');
 
@@ -103,9 +104,10 @@ envio.addEventListener('click', function() {
   else{
     let dinero = cantidad.value*(10000);
     console.log(dinero);
-    ERC20Contract.methods.transfer(direccion.value,dinero).send({ from: account }).then(res => {
+    await ERC20Contract.methods.transfer(direccion.value,dinero).send({ from: account }).then(res => {
       console.log(res);
   });
+  location.reload();
   }
 });
 

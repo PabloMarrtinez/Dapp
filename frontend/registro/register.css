@@ -3,6 +3,7 @@
     --fondo: #ffffff;
     --container: #ffffff;
     --borde: #3754b3;
+    --azul_claro: #5673cf;
   }
   
 *{
@@ -10,6 +11,7 @@
 }
 
 html, body {
+    width: 100%;
     height: 100%;
     margin: 0;
 }
@@ -21,15 +23,16 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 }
 
 .logo_flex {
-    height: 320px;
-    width: 800px;
+    height: 150px;
+    width: 400px;
     background-image: url('../pictures/logo.png');
     background-size: contain;
     background-repeat: no-repeat ;
+    min-height: 150px;
   }
   
 
@@ -37,17 +40,20 @@ html, body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     padding: 20px;
-    border: solid 6px var(--borde);
+
     border-top-left-radius: 30px;
     border-bottom-right-radius: 30px;
     background-color: var(--fondo);
     width: 70%;
+    max-width: 800px;
+    border: solid 6px var(--borde);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
 .username_flex{
-    height: 150px;
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -56,7 +62,7 @@ html, body {
 }
 
 .password_flex{
-    height: 150px;
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -65,7 +71,7 @@ html, body {
 }
 
 .tittle_flex{
-    height: 200px;
+    height: 120px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -75,54 +81,55 @@ html, body {
 }
 
 .button_flex{
-    height: 300px;
+    height: 200px;
     width: 100%;
     background-color: var(--borde);
 }
 
 .tittle{
     color: black;
-    font-size: 60px;
+    font-size: 40px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     
 }
 
 .username_item{
     color: rgb(116, 104, 104);
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .username_input{
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     box-sizing: border-box; 
     width: 80%; 
     border: none;
     border-radius: 5px; 
     padding: 10px; 
     outline: none;
-    border-bottom: 8px solid var(--borde);
+    border-bottom: 5px solid var(--borde);
+    
 }
 
 .password_item{
     color: rgb(116, 104, 104);
-    font-size: 50px;
+    font-size: 20px;
 }
 
 .password_input{
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     box-sizing: border-box; 
     width: 80%; 
     border: none;
     border-radius: 5px; 
     padding: 10px; 
     outline: none;
-    border-bottom: 8px solid var(--borde);
+    border-bottom: 5px solid var(--borde);
 }
 
 .button{
-    height: 200px;
+    height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -131,14 +138,14 @@ html, body {
 }
 
 .button_input {
-    font-size: 40px;
-    height: 50%;
-    width: 60%;
+    font-size: 20px;
+    height: 60px;
+    width: 180px;
     background-color: #d6d2d2; 
     color: #000000; 
-    border: 5px solid #000; 
+    border: 2px solid #000; 
     border-radius: 10px;
-    padding: 10px 20px; 
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
   }
   
 .create{
@@ -146,5 +153,43 @@ html, body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    font-size: 25px;
+    font-size: 15px;
 }
+
+
+
+.modo{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.botonVersion{
+    min-width: 150px;
+    max-width: 200px;
+    width: 20%;
+    height: 60px;
+    font-size: 20px;
+    border: 1px solid black;
+    transition: all 0.4s;
+
+}
+
+.elegido{
+    background-color: var(--borde);
+    color: white;
+}
+
+.botonVersion:hover{
+    cursor: pointer;
+}
+
+.button_input:hover{
+    cursor: pointer;
+    background-color: var(--azul_claro);
+    color: white;
+}
+

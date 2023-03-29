@@ -6,9 +6,6 @@ async function obtenerDatos () {
 
 };
 
-obtenerDatos();
-
-
 
 const MenuIcono = document.querySelector('.menu_icono');
 const menu_desplegable = document.querySelector('.menu_desplegable');
@@ -74,9 +71,10 @@ async function carga() {
 
 
 
-function init() {
+async function init() {
   
-    carga();
+  await obtenerDatos();
+  carga();
 
     // Comprueba si existe el obj ethereum == que metamask esta isntalado
     if (typeof window.ethereum !== 'undefined') {

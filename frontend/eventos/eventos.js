@@ -1,5 +1,6 @@
 var data;
 let identificadorEventoComprar;
+let precioEventoComprar;
 
 const modal = document.querySelector('.modal'); 
 const botonCerrar = modal.querySelector('.botton_cerrar'); 
@@ -10,7 +11,7 @@ async function obtenerDatos () {
 
 };
 
-obtenerDatos();
+
 
 const MenuIcono = document.querySelector('.menu_icono');
 const menu_desplegable = document.querySelector('.menu_desplegable');
@@ -64,6 +65,7 @@ let account;
 let ERC20Contract;
 let proxyContract;
 let events;
+let amount;
 
 async function carga() {
 
@@ -105,7 +107,9 @@ async function getEvents(){
 
 botones.forEach(boton => {
   boton.addEventListener('click', () => {
+    console.log(boton);
     identificadorEventoComprar = boton.classList[1];
+    precioEventoComprar = boton.classList[2];
     modal.classList.add('modal_flex');
   });
 });
@@ -150,10 +154,19 @@ function addEvent(_nombre, _precio, _fecha, _entradasRestantes, _id){
   entradasRestantes.classList.add("entradasRestantes");
   entradasRestantes.textContent = "Entradas restantes: "+_entradasRestantes;
   var comprar = document.createElement("input");
-  comprar.classList.add("comprar");
+
+  if(_entradasRestantes == 0){
+    comprar.setAttribute("value", "Sold out");
+    comprar.classList.add("red");
+  }
+  else{
+    comprar.classList.add("comprar");
+    comprar.setAttribute("value", "Comprar"); 
+  }
   comprar.classList.add(_id);
+  comprar.classList.add(_precio);
   comprar.setAttribute("type", "submit");
-  comprar.setAttribute("value", "Comprar");
+
 
 
   //Agregamos la primera parte.
@@ -177,28 +190,33 @@ function addEvent(_nombre, _precio, _fecha, _entradasRestantes, _id){
 }
 
 async function realizarCompra(){
-  console.log(identificadorEventoComprar);
-  events = await proxyContract.methods.buyTicket(identificadorEventoComprar).send({ from: account }).then(res => {
-    console.log(res);
+  if(amount < precioEventoComprar) alert("No tienes suficientes tokens");
+  else{
+    events = await proxyContract.methods.buyTicket(identificadorEventoComprar).send({ from: account }).then(res => {
+      console.log(res);
+  
+      
+    }); 
+  }
 
-    
-  }); 
 }
 
 const confirmarCompra = document.querySelector('.button_confirm'); 
 const cancelarCompra = document.querySelector('.button_cancel'); 
 
-confirmarCompra.addEventListener('click', () => {
-  realizarCompra();
+confirmarCompra.addEventListener('click', async () => {
+
+  await realizarCompra();
   modal.classList.remove('modal_flex'); 
+  location.reload();
 });
 
 cancelarCompra.addEventListener('click', () => {
   modal.classList.remove('modal_flex'); 
 });
 
-function init() {
-  
+async function init() {
+  await obtenerDatos();
   carga();
 }
 
