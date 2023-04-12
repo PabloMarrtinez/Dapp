@@ -1,4 +1,4 @@
-
+/* 
 const botonMovil = document.querySelector('.movil');
 const botonPortatil = document.querySelector('.portatil');
 let modo = 1;
@@ -23,7 +23,7 @@ botonPortatil.addEventListener('click', function() {
     }
 
 
-});
+}); */
 
 const botonEntrar = document.querySelector('.button_input');
 

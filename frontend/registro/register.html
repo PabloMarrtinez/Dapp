@@ -8,13 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <div class="logo_flex">
 
-        </div>
         <div class="main_flex">
-            <div class="tittle_flex">
-                <h1 class="tittle">Registro de sesión</h1>
-            </div>
+            
+            <h1 class="tittle">Registro</h1>
+            
             <div class="username_flex">
 
                 <input placeholder="Nombre de usuario" class="username_input" type="text" id="username_item" name="username_item" required>
@@ -23,8 +21,19 @@
                 <input placeholder="Contraseña" class="password_input pass1" type="password" id="password_item" name="password_item" required>  
             </div>
             <div class="password_flex">
-                <input placeholder="Repite la contraseña" class="password_input pass2" type="password" id="password_item" name="password_item" required>  
+                <input placeholder="Repite la contraseña" class="password_input pass2" type="password" id="password_item2" name="password_item" required>  
             </div>
+
+            <div class="mail_flex">
+                <input placeholder="Introduce tu email" class="mail_input" type="email" id="mail_item" name="mail_item" required>
+            </div>
+            <div class="phone_flex">
+                <input placeholder="Número de teléfono" class="phone_input" type="number" id="phone_item" name="phone_item" required>
+            </div>
+            <div class="age_flex">
+                <input  class="age_input" type="date" id="age_item" name="age_item" required>
+            </div>
+
             <div class="button">
                 <input  class="button_input" type="submit" value="Crear una cuenta">
             </div>
@@ -33,10 +42,10 @@
             </div>
             
         </div>
-        <div class="modo">
+<!--         <div class="modo">
             <input type="button" class="botonVersion movil" value="Móvil">
             <input type="button" class="botonVersion portatil elegido" value="Portatil">
-        </div>
+        </div> -->
 
     </div>
     <script src="./register.js"></script>

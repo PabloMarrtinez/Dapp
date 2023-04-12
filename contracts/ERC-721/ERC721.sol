@@ -13,7 +13,8 @@ contract ERC721{
     mapping(address => uint256) private balances;                                           // Cantidad de tokens asociados a una direccion
     mapping(uint256 => address) private tokenApprovals;                                     // Address que indica la dirección que tiene permisos para administrar ese token.
     mapping(address => mapping(address => bool)) private operatorApprovals;                 // Asociación entre una dirección y otras que tiene permisos o no para administrar TODOS los tokens.
-    mapping(address => mapping(uint256 => uint256)) private NFTs;                            // Asocia a una dirección la lista de NFTs que posee
+    mapping(address => mapping(uint256 => uint256)) private NFTs;                           // Asocia a una dirección la lista de NFTs que posee
+
     uint256 constant private FIRST_TOKEN = 9999999999;
 
     // Modificador para limitar una función al owner unicamente

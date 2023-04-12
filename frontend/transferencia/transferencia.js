@@ -111,5 +111,40 @@ envio.addEventListener('click', async function() {
   }
 });
 
+const modal2 = document.querySelector('.modal2');
+const comprarTokens = document.querySelector('.comprarTokens');
+comprarTokens.addEventListener('click', async function() {
+  modal2.classList.add("modal_flex");
+});
+
+const cerrarModal = document.querySelector('.icono_cerrar');
+cerrarModal.addEventListener('click', async function() {
+  modal2.classList.remove("modal_flex");
+});
+
+const confirmarCompra = document.querySelector('.confirmarCompra');
+const cantidadToken = document.querySelector('.cantidadToken');
+let cantidadTokensComprar;
+confirmarCompra.addEventListener('click', async function() {
+  cantidadTokensComprar = cantidadToken.value;
+  if (cantidadTokensComprar == "") alert("Cantidad inválida");
+  else {
+    console.log(account);
+    await fetch(`http://localhost:4000/realizarCompra?cantidad=${cantidadTokensComprar}&direccion=${account}`)
+      .then(response => response.json())
+      .then(data => {
+        console.log(data); // Imprime en la consola el valor booleano recibido del servidor
+
+      })
+      .catch(error => {
+        console.error(error); // Manejo de errores
+      });
+    location.reload();
+  }
+
+});
+
+confirmarCompra
+
 
 window.onload = init();

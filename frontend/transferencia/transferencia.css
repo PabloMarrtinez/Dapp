@@ -8,6 +8,7 @@
   
 *{
     font-family: 'Montserrat ';
+
 }
 
 html, body {
@@ -285,4 +286,163 @@ html, body {
     cursor: pointer;
     background-color: var(--azul_claro);
 
+}
+
+.comprarMonedas{
+    display: flex;
+    width: 100%;
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.comprarTokens{
+    height: 60px;
+    width: 200px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: var(--azul_claro);
+
+}
+
+.comprarTokens:hover{
+    cursor: pointer;
+    background-color: #7d94df;
+}
+
+.modal2{   
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(194, 192, 192,0.5);
+    z-index: 1000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal_ComprarTokens{
+    height: 500px;
+    width: 600px;
+    min-width: 600px;
+    background-color: rgb(63, 57, 57);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.fotoTarjeta{
+    background-size: contain;
+    background-repeat: no-repeat ;
+    background-image: url(../pictures/tarjeta.png);
+    height: 310px;
+    width: 495px;
+    border-radius: 40px;
+}
+
+.botonesCompra{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.cantidadToken{
+    text-align: center;
+    height: 40px;
+    width: 180px;
+    font-size: 15px;
+    color: black !important;
+}
+
+.confirmarCompra{
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 15px;
+    background-color: var(--azul_claro);
+
+}
+
+.confirmarCompra:hover{
+    cursor: pointer;
+    background-color: #9eade0;
+
+}
+
+.inputTarjeta{
+    width: 400px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-right: 60px;
+    margin-top: 100px;
+    gap: 5px;
+}
+
+.NumeroTarjeta{
+    display: block;
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.fechaTarjeta{
+    display: block;
+    width: 40px;
+
+}
+
+.NombreTarjeta{
+    height: 30px;
+    width: 300px;
+    font-size: 20px;
+
+}
+
+.cvv{
+    width: 40px;
+    height: 30px;
+    text-align: center;
+   
+}
+
+*::placeholder{
+    color: black !important;
+   
+}
+
+.cvv::placeholder{
+    text-align: center;
+    color: black !important;
+   
+}
+
+.botton_cerrar{
+    width: 92%;
+    display:flex;
+    flex-direction: row-reverse;
+    color: white;
+    height: 20px;
+
+    font-size: 30px;
+    
+}
+
+.icono_cerrar:hover{
+    color: rgb(219, 219, 219);
+    cursor: pointer;
+}
+
+.modal_flex{
+    display: flex;
 }

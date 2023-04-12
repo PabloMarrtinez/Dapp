@@ -5,7 +5,7 @@ const { abiErc20, bytecodeErc20, abiErc721, bytecodeErc721, abiPROXY, bytecodePR
 
 // export NODE_OPTIONS=--openssl-legacy-provider
 
-const mnemonic = 'egg season fat nerve alone force invest wool copy faculty much hat';
+const mnemonic = 'public silly truly ozone still tool click false affair stay dish island';
 const provider = new HDWalletProvider(mnemonic, 'http://127.0.0.1:8545');
 
 const web3 = new Web3(provider);
@@ -28,9 +28,9 @@ const deploy = async () => {
     const resultERC20 =  await new web3.eth.Contract(abiErc20).deploy({data: bytecodeErc20, arguments: addresProxy}).send({ gas: gasEstimateERC20, from: account[0]});
     const resultERC721 =  await new web3.eth.Contract(abiErc721).deploy({data: bytecodeErc721, arguments: addresProxy}).send({ gas: gasEstimateERC721, from: account[0]});
 
-    console.log("addressContractProxy: \""+resultProxy.options.address+"\",");
-    console.log("addressContractERC20: \""+resultERC20.options.address+"\",");
-    console.log("addressContractERC721: \""+resultERC721.options.address+"\"");
+    console.log("\"addressContractProxy\": \""+resultProxy.options.address+"\",");
+    console.log("\"addressContractERC20\": \""+resultERC20.options.address+"\",");
+    console.log("\"addressContractERC721\": \""+resultERC721.options.address+"\"");
 
     console.log("abi ERC20: "+JSON.stringify(resultERC20.options.jsonInterface));
     console.log();console.log();

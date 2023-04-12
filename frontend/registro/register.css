@@ -23,7 +23,8 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    margin-top: 30px;
+    gap: 30px;
 }
 
 .logo_flex {
@@ -52,7 +53,7 @@ html, body {
     box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
 }
 
-.username_flex{
+.username_flex, .password_flex, .age_flex, .mail_flex, .phone_flex{
     height: 100px;
     width: 100%;
     display: flex;
@@ -61,14 +62,6 @@ html, body {
     justify-content: center;
 }
 
-.password_flex{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .tittle_flex{
     height: 120px;
@@ -98,7 +91,7 @@ html, body {
     font-size: 20px;
 }
 
-.username_input{
+.username_input,.password_input,.age_input,.mail_input,.phone_input{
     text-align: center;
     font-size: 20px;
     box-sizing: border-box; 
@@ -116,17 +109,7 @@ html, body {
     font-size: 20px;
 }
 
-.password_input{
-    text-align: center;
-    font-size: 20px;
-    box-sizing: border-box; 
-    width: 80%; 
-    border: none;
-    border-radius: 5px; 
-    padding: 10px; 
-    outline: none;
-    border-bottom: 5px solid var(--borde);
-}
+
 
 .button{
     height: 100px;
